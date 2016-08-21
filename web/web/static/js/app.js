@@ -1,17 +1,26 @@
-// Brunch automatically concatenates all files in your
-// watched paths. Those paths can be configured at
-// config.paths.watched in "brunch-config.js".
-//
-// However, those files will only be executed if
-// explicitly imported. The only exception are files
-// in vendor, which are never wrapped in imports and
-// therefore are always executed.
-
-// Import dependencies
-//
-// If you no longer want to use a dependency, remember
-// to also remove its path from "config.paths.watched".
 import "phoenix_html"
+import "bootstrap/js/collapse"
+
+$(function () {
+  $("#nav-sign-in").click(evnt => {
+    var clientKey = $("meta[name='auth0_client_key']").attr("content");
+    var endpoint = $("meta[name='auth0_endpoint']").attr("content");
+
+    new Auth0Lock(
+      clientKey,
+      endpoint,
+      {
+        auth: {
+          redirectUrl: 'http://localhost:4000/auth/callback',
+          responseType: 'code',
+          params: {
+            scope: 'openid email'
+          }
+        }
+      }
+    ).show();
+  });
+});
 
 // Import local files
 //

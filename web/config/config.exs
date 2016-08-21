@@ -7,7 +7,11 @@ use Mix.Config
 
 # General application configuration
 config :traverse,
-  ecto_repos: [Traverse.Repo]
+  ecto_repos: [Traverse.Repo],
+  auth0: [
+    client_key: "j0xS79WBJDncadoBklVxVrzFA8pc481F",
+    endpoint: "traverse.eu.auth0.com"
+  ]
 
 # Configures the endpoint
 config :traverse, Traverse.Endpoint,
