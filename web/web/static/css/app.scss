@@ -1,0 +1,7 @@
+$icon-font-path: "/fonts/"; /* Make sure Bootstrap gets its fonts from the right place. */
+@import "bootstrap";
+@import "bootstrap/theme";
+
+.alert:empty {
+  display: none;
+}
