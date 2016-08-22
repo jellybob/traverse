@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <meta name="auth0_client_key" content="<%= Application.get_env(:traverse, :auth0)[:client_key] %>">
-    <meta name="auth0_endpoint" content="<%= Application.get_env(:traverse, :auth0)[:endpoint] %>">
+    <meta name="auth0_client_key" content="<%= Application.get_env(:ueberauth, Ueberauth.Strategy.Auth0.OAuth)[:client_id] %>">
+    <meta name="auth0_endpoint" content="<%= Application.get_env(:ueberauth, Ueberauth.Strategy.Auth0.OAuth)[:domain] %>">
 
     <title>Hello Traverse!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">

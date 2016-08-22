@@ -11,7 +11,7 @@ $(function () {
       endpoint,
       {
         auth: {
-          redirectUrl: 'http://localhost:4000/auth/callback',
+          redirectUrl: 'http://localhost:4000/auth/auth0/callback',
           responseType: 'code',
           params: {
             scope: 'openid email'

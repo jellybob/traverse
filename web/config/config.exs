@@ -7,11 +7,17 @@ use Mix.Config
 
 # General application configuration
 config :traverse,
-  ecto_repos: [Traverse.Repo],
-  auth0: [
-    client_key: "j0xS79WBJDncadoBklVxVrzFA8pc481F",
-    endpoint: "traverse.eu.auth0.com"
+  ecto_repos: [Traverse.Repo]
+
+config :ueberauth, Ueberauth,
+  providers: [
+    auth0: {Ueberauth.Strategy.Auth0, []}
   ]
+
+config :ueberauth, Ueberauth.Strategy.Auth0.OAuth,
+  domain: "traverse.eu.auth0.com",
+  client_id: "j0xS79WBJDncadoBklVxVrzFA8pc481F",
+  client_secret: "r08hmtaMPEBxk85rJse1Sp_QxeFMroF9QC198oWAVOgJK2A_8PcygP5DShWJ_Ks-"
 
 # Configures the endpoint
 config :traverse, Traverse.Endpoint,

@@ -17,7 +17,8 @@ defmodule Traverse.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/auth/callback", AuthController, :authenticate
+    get "/auth/:provider", AuthController, :request
+    get "/auth/:provider/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.
